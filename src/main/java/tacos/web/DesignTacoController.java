@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import lombok.extern.slf4j.Slf4j;
 import tacos.Ingredient;
 import tacos.Ingredient.Type;
 import tacos.Order;
@@ -30,7 +29,6 @@ import tacos.data.UserRepository;
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("order")
-@Slf4j
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
@@ -61,7 +59,6 @@ public class DesignTacoController {
 
     @GetMapping
     public String showDesignForm(Model model, Principal principal) {
-        log.info("   --- Designing taco");
         List<Ingredient> ingredients = new ArrayList<>();
         ingredientRepo.findAll().forEach(i -> ingredients.add(i));
 
@@ -82,8 +79,6 @@ public class DesignTacoController {
     public String processDesign(
             @Valid Taco taco, Errors errors,
             @ModelAttribute Order order) {
-
-        log.info("   --- Saving taco");
 
         if (errors.hasErrors()) {
             return "design";
