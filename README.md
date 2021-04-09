@@ -14,9 +14,20 @@ A online food e-commerce system with the following features:
 
 # Showcases of pages
 * main page
+
+![main page](./src/main/resources/static/images/main.png)
+
 * food design page
+
+![design page](./src/main/resources/static/images/design.png)
+
 * recent design page
+
+![recent page](./src/main/resources/static/images/recent.png)
+
 * order page(with cart)
+
+![order page](./src/main/resources/static/images/orders.png)
 
 
 
